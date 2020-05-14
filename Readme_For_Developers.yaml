@@ -1,0 +1,36 @@
+Raksha:
+
+- User:
+  - Registration (Only using Adhaar data)
+  - Login
+  - File FIR
+  - Track FIR status
+
+
+- Police:
+  - Registration (By Central Facility)
+  - Login
+  - See FIR
+  - Update FIR status
+  
+- Work Breakdown:
+  - Registration using Adhaar data:
+    - User will enter Adhaar UID. This will ensure user is not fake.
+    - OTP will be sent to his registered mobile number
+    - After verification, registration form will be prepopulated in some fields using Adhaar data, rest fields will be filled by user
+      - Validation of input on client side
+      - Encryption
+  - After registration user will be asked to login
+  - After login, he'll be redirected to homepage which will contain fields like File FIR, Track FIR Status, Call Emergency Services, Women's Helpline No. etc
+  - Filing FIR:
+    - Upon user clicking 'File FIR', an alert box kind of thing will open which will ask user if he/she's filing FIR for self or others.
+    - If filing for others, other person's Adhaar UID will be asked for and FIR fields will be shown which the user has to fill.
+    - If filing for self, some of the fields will be prepopulated before itself and fields such as description of incident, type of incident etc. will have to be filled by user.
+    - At the same time timestamp, and location of user will be noted automatically by his/her device.
+    - User will also be asked for PNR number. This will double ensure no fake FIRs are being filed.
+    - An emergency FIR can also be filed without logging in. This will follow the same procedure as followed for 'Filing FIR for Others'.
+    - After filing the FIR successfully, user will be informed with an SMS containing the FIR number. Also the nearby police officer and nearby Railway Police Station will be informed about the incident. 
+   - Tracking FIR status:
+    - User will also be able to track the status of FIR he/she has filed.
+    - He/she just needs to enter the FIR number and click the 'Track' button.
+    - It will show the status of the FIR filed as per the updates provided by the police.
