@@ -6,6 +6,7 @@
  */
 
 module.exports = function (app) {
-  app.use('/user', require('./user'));
-  app.use('/officer', require('./officer'));
+  app.use("/user", require("./user"));
+  app.use("/officer", require("./officer"));
+  app.use("/policestation", require("./policeStation"));
 };

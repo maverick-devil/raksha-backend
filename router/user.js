@@ -1,20 +1,27 @@
 /**
  * /router/user.js
- * @description: Router for user requests.
+ * @description: Router for User requests.
  */
 
+"use strict";
 
+const UserRouter = require("express").Router();
+const Authenticate = require("../controller/authenticate");
+const User = require("../controller/user");
 
-const UserRouter = require('express').Router();
-const User = require('../controller/user');
+UserRouter.route("/login")
+  .post(User.login);
 
-UserRouter.route('/login')
-  .post(User.userLogin);
+UserRouter.route("/filefir")
+  .post(Authenticate.authenticateToken, User.fileFIR);
 
-UserRouter.route('/fir')
-  .get(() => console.log('Inside user fir; data received:', req.body.params));
+UserRouter.route("/viewfiledfirs")
+  .post(Authenticate.authenticateToken, User.viewFiledFIRs);
 
-UserRouter.route('/firstatus')
-  .get(() => console.log('Inside user firstatus; data received:', req.body.params));
+UserRouter.route("/firdetails")
+  .post(Authenticate.authenticateToken, User.firDetails);
+
+UserRouter.route("/register")
+  .post(User.regsiter);
 
 module.exports = UserRouter;

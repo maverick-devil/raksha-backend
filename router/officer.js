@@ -1,20 +1,21 @@
 /**
  * /router/officer.js
- * @description: Router for user requests.
+ * @description: Router for Officer requests.
  */
 
 
 
-const OfficerRouter = require('express').Router();
-const Officer = require('../controller/officer');
+const OfficerRouter = require("express").Router();
+const Officer = require("../controller/officer");
+const Authenticate = require("../controller/authenticate");
 
-OfficerRouter.route('/login')
-  .post((req, res) => console.log('Inside officer login; data received:', req));
+OfficerRouter.route("/login")
+  .post();
 
-OfficerRouter.route('/fir')
-  .get(() => console.log('Inside officer fir; data received:', req.body.params));
+OfficerRouter.route("/update-fir-status")
+  .get(Authenticate.authenticateToken, Officer.updateFIRStatus);
 
-OfficerRouter.route('/firstatus')
-  .get(() => console.log('Inside officer firstatus; data received:', req.body.params));
+OfficerRouter.route("/confirm-fir")
+  .get(Authenticate.authenticateToken, Officer.confirmFIR);
 
 module.exports = OfficerRouter;

@@ -1,0 +1,29 @@
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "email": "abc.xyz@gmail.com",
+    "password": "Abc@1234"
+}
+
+###
+
+POST http://localhost:3000/user/fir
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MDM1MjQzMTcwYTViZjFjOThhMzI5MzUiLCJlbWFpbCI6ImFiYy54eXpAZ21haWwuY29tIiwidWlkIjoxMjM0NTY3ODkwMTIsIm5hbWUiOiJBQkMgWFlaIiwicGFzc3dvcmQiOiJBYmNAMTIzNCIsImRvYiI6IjIxLTA1LTE5OTAiLCJhZGRyZXNzIjoiU29tZSBob3VzZSwgc29tZSBzdHJlZXQsIHNvbWUgY2l0eSIsImNvbnRhY3QiOiIxMjM0NTY3ODkwIiwiZ2VuZGVyIjoiTUFMRSIsIl9fdiI6MH0.6ah9ZINsIEdkTbGCumVRsr-xfTe1cOXPkO8fge2rnPI
+Content-Type: application/json
+
+{
+    "sample": "data"
+}
+
+###
+
+POST http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+    "email": "abc.xyz1@gmail.com",
+    "password": "Abc@1234",
+    "uid": 123456789012,
+    "name": "ABC XYZ"
+}
